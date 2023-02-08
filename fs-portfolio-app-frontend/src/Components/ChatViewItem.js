@@ -6,11 +6,9 @@ const ChatViewItem = ({message}) => {
 
     return (
         <>
-            <ul>
-                <li>
-                    time: {time} date: {date} message: {message.message}
-                </li>
-            </ul>
+            <li>
+                time: {time} date: {date} message: {message.message}
+            </li>
         </>
     );
 };

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 import ChatView from "../Components/ChatView"
+import ChatNewForm from '../Components/ChatNewForm';
 
 const Chat = () => {
     const API = process.env.REACT_APP_API_URL;
@@ -18,6 +19,7 @@ const Chat = () => {
         <div className="chat">
             <h2>Chat Page</h2>
             <ChatView messages={messages}/>
+            <ChatNewForm/>
         </div>
     );
 };
