@@ -1,14 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const ChatViewItem = ({message}) => {
+const ChatViewItem = ({message, id}) => {
     console.log(message)
     const { time, date } = message
 
     return (
         <>
-            <li>
-                time: {time} date: {date} message: {message.message}
-            </li>
+            <Link to={`/chat/${id}`}>
+                <li>
+                    time: {time} date: {date} message: {message.message}
+                </li>
+            </Link>
         </>
     );
 };

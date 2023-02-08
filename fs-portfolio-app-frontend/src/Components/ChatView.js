@@ -6,7 +6,7 @@ const ChatView = ({messages}) => {
         <>
             <ul>
                 {
-                    messages.map(message => <ChatViewItem key={message.id} message={message} />)
+                    messages.map(message => <ChatViewItem key={message.id} message={message} id={message.id} />)
                 } 
             </ul>
       
