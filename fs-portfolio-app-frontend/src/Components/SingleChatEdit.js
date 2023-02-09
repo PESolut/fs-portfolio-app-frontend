@@ -3,14 +3,25 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 
-const SingleChatEdit = (message) => {
+const SingleChatEdit = () => {
     const API = process.env.REACT_APP_API_URL
     const navigate = useNavigate();
     const id = useParams()
     const [formData, setFormData] = useState ({
         message: '',
-        user_id: ''
+        user_id: '',
+        date: '',
+        time: ''
     })
+
+    useEffect(() => {
+        if (id) {
+            axios
+            .get(`${API}/messages/${id.id}`)
+            .then((res) => setFormData(res.data))
+            .catch((error) => console.log('not found'))
+        }
+    }, [id])
     
     const handleInputChange = event => {
         setFormData({
