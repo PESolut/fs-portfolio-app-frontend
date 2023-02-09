@@ -23,7 +23,7 @@ const Message = () => {
         <div className="message">
             <h2>Message Page</h2>
             <SingleChatView message={message}/>
-            <SingleChatEdit message={message} />
+            <SingleChatEdit message={message}/>
         </div>
     );
 };

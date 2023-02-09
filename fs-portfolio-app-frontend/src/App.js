@@ -1,10 +1,13 @@
 import RouteComponent from "./Components/RouteComponent";
-import { Router, Routes, Route } from "react-router-dom";
+import Nav from "./Components/Nav";
+import Footer from "./Components/Footer";
 
 function App() {
   return (
     <div>
+      <Nav/>
       <RouteComponent/>
+      <Footer/>
     </div>
   );
 }

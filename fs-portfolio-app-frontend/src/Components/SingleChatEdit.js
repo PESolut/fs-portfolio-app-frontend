@@ -36,9 +36,7 @@ const SingleChatEdit = () => {
         axios
         .put(`${API}/messages/${id.id}`, formData)
         .then(() => {
-            console.log(id.id)
-            console.log(formData)
-            console.log(API)
+        navigate("/chat")
         })
         .catch((error) => console.log(error))
     }
