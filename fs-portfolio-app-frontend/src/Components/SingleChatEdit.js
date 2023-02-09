@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import DeleteButton from "./DeleteButton";
 
 
 const SingleChatEdit = () => {
@@ -41,6 +42,16 @@ const SingleChatEdit = () => {
         .catch((error) => console.log(error))
     }
 
+    const deleteMessage = () => {
+        console.log('deleted message')
+        axios
+        .delete(`${API}/messages/${id.id}`)
+        .then(() => {
+            navigate("/chat")
+        })
+        .catch((error) => console.log(error))
+    }
+
     return (
         <>
         <form onSubmit={handleSubmit}>
@@ -64,7 +75,12 @@ const SingleChatEdit = () => {
                         onChange={handleInputChange}
                         />
             </div>
-            <button type="submit">Post Message</button>
+            <button type="submit">Edit Message</button>
+            <DeleteButton
+            text="Delete Message"
+            onClick={deleteMessage}
+            className="delete-button"
+            />
         </form>
     </>
     );
