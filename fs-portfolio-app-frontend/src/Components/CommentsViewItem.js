@@ -8,7 +8,6 @@ const CommentsViewItem = ({comment, id}) => {
         <>
             <li>
                 time: {time} date: {date} comment: {comment.comment}
-
             </li>
         </>
     );

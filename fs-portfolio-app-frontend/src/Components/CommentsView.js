@@ -1,4 +1,5 @@
 import CommentsViewItem from "./CommentsViewItem";
+import CommentsNewForm from "./CommentsNewForm";
 
 const CommentsView = ({comments}) => {
     console.log(comments)
@@ -11,6 +12,7 @@ const CommentsView = ({comments}) => {
                     comments.map(comment => <CommentsViewItem key={comment.id} comment={comment} id={comment.id}/>)         
                 }
             </ul>
+            <CommentsNewForm/>
         </>
     );
 };
