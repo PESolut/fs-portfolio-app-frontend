@@ -1,0 +1,14 @@
+nav {
+    justify-content: space-evenly;
+    background-color: black;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+nav a {
+    font-size: 40px;
+    text-decoration: none;
+    color:rgb(61, 173, 62)
+}

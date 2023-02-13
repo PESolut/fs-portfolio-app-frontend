@@ -1,11 +1,19 @@
 import { Link } from 'react-router-dom';
+import "./Styles/Nav.css"
 
 const Nav = () => {
     return (
         <nav>
-            <Link to='/'>Home</Link>
-            <Link to='/about'>About</Link>
-            <Link to='/chat'>Chat</Link>
+            <div className='home-button'>
+                 <Link to='/'>Home</Link>
+            </div>
+            <div className='about-button'>
+                 <Link to='/about'>About</Link>
+            </div>
+            <div className='chat-button'>
+                 <Link to='/chat'>Chat</Link>
+            </div>
+            
         </nav>
     );
 };
