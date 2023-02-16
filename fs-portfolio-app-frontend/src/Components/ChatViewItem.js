@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { fetchUsersData } from '../API/auth';
 
-const ChatViewItem = ({message, id}) => {
+const ChatViewItem = ({ message, id, loggedUserID }) => {
     const [singleUserName, setSingleUserName] = useState('')
     const userIDz =  id
 

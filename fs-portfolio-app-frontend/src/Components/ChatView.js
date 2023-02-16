@@ -1,7 +1,8 @@
 import ChatViewItem from "./ChatViewItem"
 import '../Components/Styles/ChatView.css'
 
-const ChatView = ({messages}) => {
+const ChatView = ({messages, loggedUserID }) => {
+    console.log('message z',loggedUserID)
     console.log('messages',messages)
     console.log('ChatView localstorage isAuth state:',localStorage.getItem('isAuth'))
     console.log('ChatView userinfo', localStorage.getItem('userData'))
@@ -17,7 +18,7 @@ const ChatView = ({messages}) => {
         <>
             <ul className="chat-view-list">
                 {
-                    messages.map(message => <ChatViewItem key={message.id} message={message} id={message.id} />)
+                    messages.map(message => <ChatViewItem loggedUserID={loggedUserID} key={message.id} message={message} id={message.id} />)
                 } 
             </ul>
       

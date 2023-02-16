@@ -10,8 +10,18 @@ const Message = () => {
     const [message, setMessage] = useState([])
     const [comments, setComments] = useState([])
     const [info, setInfo] = useState(null)
+    const [loggedInUserID, setLoggedInUserID] = useState(0)
     let { id } = useParams()
     let navigate = useNavigate()
+
+    const userInfoString = localStorage.getItem('userData')
+    const userInfoJson = JSON.parse(userInfoString)
+    console.log('logged user info object',userInfoJson)
+    console.log('logged user info id', userInfoJson.id)
+    const loggedUserID = userInfoJson.id
+    console.log('!logged',loggedUserID)
+    // setLoggedInUserID(loggedUserID)
+
 
     useEffect(() => {
         axios

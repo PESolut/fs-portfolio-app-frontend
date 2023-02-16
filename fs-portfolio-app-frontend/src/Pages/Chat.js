@@ -36,7 +36,7 @@ const Chat = () => {
     return (
         <div className="chat">
             <h2>Chat Page</h2>
-            <ChatView messages={messages}/>
+            <ChatView messages={messages} loggedUserID={loggedUserID}/>
             <ChatNewForm userID={loggedUserID}/>
         </div>
     );
