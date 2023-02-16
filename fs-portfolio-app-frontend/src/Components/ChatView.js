@@ -2,6 +2,7 @@ import ChatViewItem from "./ChatViewItem"
 import '../Components/Styles/ChatView.css'
 
 const ChatView = ({messages}) => {
+    console.log('messages',messages)
     console.log('ChatView localstorage isAuth state:',localStorage.getItem('isAuth'))
     console.log('ChatView userinfo', localStorage.getItem('userData'))
     const userString = localStorage.getItem('userData')

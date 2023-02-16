@@ -3,24 +3,30 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import '../Components/Styles/ChatNewForm.css'
 
-const ChatNewForm = () => {
+const ChatNewForm = (userID) => {
+    console.log(userID.userID)
     const API = process.env.REACT_APP_API_URL
     const navigate = useNavigate();
     const [formData, setFormData] = useState ({
         message: '',
-        user_id: ''
+        user_id: userID.userID
     })
 
     const handleInputChange = event => {
         setFormData({
             ...formData,
-            [event.target.name]: event.target.value
+            [event.target.name]: event.target.value 
         })
     }
 
     const handleSubmit = event => {
+        setFormData({
+            ...formData,
+            'user_id': userID.userID
+        })
         event.preventDefault()
         // logic that talks to the database
+        console.log(formData)
         axios
         .post(`${API}/messages`, formData)
         .then(() => {

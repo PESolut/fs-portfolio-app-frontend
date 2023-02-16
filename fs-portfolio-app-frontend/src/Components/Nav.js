@@ -18,14 +18,20 @@ const Nav = () => {
                  <Link to='/'>Home</Link>
             </div>
 
-            <div className='chat-button'>
-                 <Link to='/chat'>Chat</Link>
-            </div>
+          
 
             {localStorage.getItem('isAuth')? ( 
-                <div className='dashboard-button'>
+                <>
+                 <div className='dashboard-button'>
                     <Link to='/dashboard'>Dashboard</Link>
                 </div>
+                <div className='chat-button'>
+                 <Link to='/chat'>Chat</Link>
+                 </div>
+                
+                </>
+               
+                
             ) : (
                 <>
                  <div className='login-button'> 
