@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { useState } from 'react';
 import axios from 'axios';
 import { UserContext } from '../App';
-import { onLogin } from '../API/auth';
+import { fetchUsersData, onLogin } from '../API/auth';
 
 import '../Components/Styles/Login.css'
 
@@ -34,10 +34,18 @@ const Login = () => {
     })
     const [error, setError] = useState(false)
     const [success, setSuccess] = useState('')
+    const [userInfo, setUserInfo] = useState({
+        user_id: '',
+        name: '',
+    })
 
     const onChange = (e) => {
         console.log(values)
         setValues({...values, [e.target.name]: e.target.value})
+    }
+
+    const singleUserByEmail = (email) => {
+        console.log('login-page, singleUserByEmail value:',email)
     }
 
     const onSubmit = async (event) => {
@@ -46,8 +54,10 @@ const Login = () => {
        
         try {
             await onLogin(values)
+            const userData = await fetchUsersData()
+            singleUserByEmail(values.email)
+            console.log(userData)
             AS.setAuth(true)
-
             localStorage.setItem('isAuth', 'true')
             setError('')
             setValues('')

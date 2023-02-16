@@ -24,3 +24,9 @@ export async function fetchProtectedInfo() {
         'http://localhost:3023/users/protected'
     )
 }
+
+export async function fetchUsersData() {
+    return await axios.get(
+        'http://localhost:3023/users'
+    )
+}
