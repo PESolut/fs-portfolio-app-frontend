@@ -34,7 +34,7 @@ const Chat = () => {
     const loggedUserID = userInfoJson.id
 
     return (
-        <div className="chat">
+        <div className="chat-new-form">
             <h2>Chat Page</h2>
             <ChatView messages={messages} loggedUserID={loggedUserID}/>
             <ChatNewForm userID={loggedUserID}/>
