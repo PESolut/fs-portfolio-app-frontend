@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 import ChatView from "../Components/ChatView"
 import ChatNewForm from '../Components/ChatNewForm';
+import '../Components/Styles/Chat.css'
 
 const Chat = () => {
     const API = process.env.REACT_APP_API_URL;

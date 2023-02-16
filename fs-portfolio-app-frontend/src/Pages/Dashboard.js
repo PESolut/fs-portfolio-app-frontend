@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react'
 import { fetchProtectedInfo, onLogout } from '../API/auth';
 import { UserContext } from '../App';
+import '../Components/Styles/Dashboard.css'
 
 const Dashboard = () => {
     const [userInfo, setUserInfo] = useState([])
@@ -14,6 +15,10 @@ const Dashboard = () => {
     const userString = localStorage.getItem('userData')
     const userJson = JSON.parse(userString)
     console.log('Dashboard userinfo parsed', userJson)
+    const userName = userJson.name
+    const userEmail = userJson.email
+    const userId = userJson.id
+    console.log ('Users Info:','name:',userName,'id',userId,'email',userEmail)
 
     const logout = async () => {
         try {
@@ -46,10 +51,10 @@ const Dashboard = () => {
             <h1>Loading...</h1>
         </div>
     ) : (
-        <div>
+        <div className='dashboard'>
             <h1>Dashboard</h1>
             <h2>{protectedData}</h2>
-            <h4>Welcome {}</h4>
+            <h4>Welcome {userName}</h4>
 
             <button onClick={() => logout()} className='logout-button'>Log Out</button>
         </div>

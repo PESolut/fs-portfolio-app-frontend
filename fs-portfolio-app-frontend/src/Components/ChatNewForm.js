@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import '../Components/Styles/ChatNewForm.css'
 
 const ChatNewForm = () => {
     const API = process.env.REACT_APP_API_URL
@@ -9,17 +10,6 @@ const ChatNewForm = () => {
         message: '',
         user_id: ''
     })
-    // const [userId, setUserId] = useState('');
-    // const [users, setUsers] = useState([]);
-
-    // useEffect(() => {
-    //     // Fetch the users data from the API or database
-    //     // and store it in the state
-    //     // ...
-        
-    
-    //     setUsers(fetchedUsers);
-    //   }, []);
 
     const handleInputChange = event => {
         setFormData({
@@ -41,7 +31,8 @@ const ChatNewForm = () => {
 
     return (
     <>
-        <form onSubmit={handleSubmit}>
+    <div className="chat-new-form">
+    <form onSubmit={handleSubmit}>
             <div>
                 <label htmlFor="message">Message:</label>
                     <input
@@ -52,7 +43,7 @@ const ChatNewForm = () => {
                         onChange={handleInputChange}
                         />
             </div>
-            <div>
+            {/* <div>
                 <label htmlFor="user_id">User ID:</label>
                     <input
                         type="text"
@@ -61,9 +52,12 @@ const ChatNewForm = () => {
                         value={formData.user_id}
                         onChange={handleInputChange}
                         />
-            </div>
+            </div> */}
             <button type="submit">Post Message</button>
         </form>
+
+    </div>
+        
     </>
     );
 };

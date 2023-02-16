@@ -8,7 +8,7 @@ const ChatViewItem = ({message, id}) => {
     return (
         <>
             <Link to={`/chat/${id}`}>
-                <li>
+                <li className='message'>
                     time: {time} date: {date} message: {message.message}
                 </li>
             </Link>

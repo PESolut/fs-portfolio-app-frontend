@@ -1,4 +1,5 @@
 import ChatViewItem from "./ChatViewItem"
+import '../Components/Styles/ChatView.css'
 
 const ChatView = ({messages}) => {
 
