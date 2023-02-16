@@ -9,6 +9,7 @@ const Message = () => {
     const API = process.env.REACT_APP_API_URL
     const [message, setMessage] = useState([])
     const [comments, setComments] = useState([])
+    const [info, setInfo] = useState(null)
     let { id } = useParams()
     let navigate = useNavigate()
 
@@ -30,11 +31,17 @@ const Message = () => {
             })
     },[])
 
+    useEffect(() => {
+        axios.get(`${API}/users/protected`).then((response) => {
+            setInfo(response.data);
+        });
+    }, info);
+    console.log(info)
     return (
         <div className="message">
             <h2>Message Page</h2>
             <SingleChatView message={message}/>
-            <SingleChatEdit message={message}/>
+            {info && <SingleChatEdit message={message}/>}
             <CommentsView comments={comments}/>
         </div>
     );
