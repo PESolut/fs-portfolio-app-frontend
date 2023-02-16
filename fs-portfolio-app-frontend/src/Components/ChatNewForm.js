@@ -37,9 +37,9 @@ const ChatNewForm = (userID) => {
 
     return (
     <>
-    <div className="chat-new-form">
+    <div className="message-forms">
     <form onSubmit={handleSubmit}>
-            <div>
+            <div className='comments-list'>
                 <label htmlFor="message">Message:</label>
                     <input
                         type="text"

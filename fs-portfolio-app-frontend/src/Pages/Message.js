@@ -4,6 +4,7 @@ import axios from 'axios'
 import SingleChatView from '../Components/SingleChatView'
 import SingleChatEdit from '../Components/SingleChatEdit';
 import CommentsView from '../Components/CommentsView';
+import '../Components/Styles/Message.css'
 
 const Message = () => {
     const API = process.env.REACT_APP_API_URL
@@ -48,7 +49,7 @@ const Message = () => {
     }, info);
     console.log(info)
     return (
-        <div className="message">
+        <div className="message-window">
             <h2>Message Page</h2>
             <SingleChatView message={message}/>
             {info && <SingleChatEdit message={message}/>}

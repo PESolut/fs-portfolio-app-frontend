@@ -46,6 +46,7 @@ const CommentsNewForm = () => {
 
     return (
         <>
+        <div className="message-input">
         <form onSubmit={handleSubmit}>
             <div>
                 <label htmlFor="comment">Comment:</label>
@@ -62,13 +63,15 @@ const CommentsNewForm = () => {
                 <input
                     type="text"
                     id="user_id"
-                    name="user_id"
                     value={formData.user_id}
                     onChange={handleInputChange}
                     />
             </div> */}
             <button type="submit">Post Comment</button>
         </form>
+
+        </div>
+       
         </>
     );
 };

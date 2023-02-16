@@ -7,7 +7,7 @@ const CommentsView = ({comments}) => {
     return (
         <>
         <h4>Comments</h4>
-            <ul>
+            <ul className="comments-list">
                 {
                     comments.map(comment => <CommentsViewItem key={comment.id} comment={comment} id={comment.id}/>)         
                 }

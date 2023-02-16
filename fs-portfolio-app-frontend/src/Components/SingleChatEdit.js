@@ -54,6 +54,7 @@ const SingleChatEdit = () => {
 
     return (
         <>
+        <div className="message-input">
         <form onSubmit={handleSubmit}>
             <div>
                 <label htmlFor="message">Message:</label>
@@ -75,13 +76,19 @@ const SingleChatEdit = () => {
                         onChange={handleInputChange}
                         />
             </div>
+            <div className="message-button">
             <button type="submit">Edit Message</button>
             <DeleteButton
             text="Delete Message"
             onClick={deleteMessage}
             className="delete-button"
             />
+            </div>
+          
         </form>
+
+        </div>
+        
     </>
     );
 };

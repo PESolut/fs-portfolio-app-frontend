@@ -83,17 +83,17 @@ const Login = () => {
         <form onSubmit={onSubmit} className='login-form'>
             <h4>Welcome Back!</h4>
             <p>{greetings[greetingIteration]}</p>
-            <label>
+            {/* <label>
                 Name
-            </label>
-            <input
+            </label> */}
+            {/* <input
             onChange={(e) => onChange(e)}
             type='name'
             id='name'
             name='name'
             value={values.name}
             placeholder='Luke Skywalker'
-            />
+            /> */}
             <label>
                 Email
             </label>

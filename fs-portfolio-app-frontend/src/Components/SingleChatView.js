@@ -10,10 +10,10 @@ const SingleChatView = (message) => {
 
     console.log(message.message)
     return (
-        <>
-        <h3>{chatMessage}</h3>
+        <div className="message-window-message">
+        <h4>{chatMessage}</h4>
         <h4>{time} {date}</h4>
-        </>
+        </div>
     );
 };
 
