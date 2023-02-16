@@ -34,18 +34,24 @@ const Login = () => {
     })
     const [error, setError] = useState(false)
     const [success, setSuccess] = useState('')
-    const [userInfo, setUserInfo] = useState({
-        user_id: '',
-        name: '',
-    })
+    const [userInfo, setUserInfo] = useState([])
 
     const onChange = (e) => {
         console.log(values)
         setValues({...values, [e.target.name]: e.target.value})
     }
 
-    const singleUserByEmail = (email) => {
-        console.log('login-page, singleUserByEmail value:',email)
+    const singleUserByEmail = (email, usersData) => {
+        console.log('login-page, singleUserByEmail, email arg value:',email)
+        console.log('login-page, singleUserByEmail, usersData arg value:',usersData.data)
+        for (let i = 0; i < usersData.length; i++) {
+            console.log(`usersData - iteration #${i}`,usersData[i])
+            console.log(`usersData.email - iteration #${i}`,usersData[i].email)
+            if (usersData[i].email === email) {
+                return usersData[i];
+            }
+        }
+          return null; // Return null if no match found
     }
 
     const onSubmit = async (event) => {
@@ -54,9 +60,11 @@ const Login = () => {
        
         try {
             await onLogin(values)
-            const userData = await fetchUsersData()
-            singleUserByEmail(values.email)
-            console.log(userData)
+            const usersData = await fetchUsersData()
+            const userData = singleUserByEmail(values.email,usersData.data)
+            console.log(`single user data - `,userData)
+            console.log(usersData)
+            localStorage.setItem('userData', JSON.stringify(userData))
             AS.setAuth(true)
             localStorage.setItem('isAuth', 'true')
             setError('')

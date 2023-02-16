@@ -15,6 +15,7 @@ const Dashboard = () => {
         try {
             await onLogout()
             localStorage.removeItem('isAuth')
+            localStorage.removeItem('userData')
             window.location.reload();
         } catch (error) {
             console.log(error.response)
