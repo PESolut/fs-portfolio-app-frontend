@@ -34,7 +34,6 @@ const Login = () => {
     })
     const [error, setError] = useState(false)
     const [success, setSuccess] = useState('')
-    const [userInfo, setUserInfo] = useState([])
 
     const onChange = (e) => {
         console.log(values)

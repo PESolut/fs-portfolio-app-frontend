@@ -5,11 +5,15 @@ import { fetchProtectedInfo, onLogout } from '../API/auth';
 import { UserContext } from '../App';
 
 const Dashboard = () => {
+    const [userInfo, setUserInfo] = useState([])
     const [loading, setLoading] = useState(true)
     const [protectedData, setProtectedData] = useState(null)
 
     console.log('Dashboard localstorage isAuth state:',localStorage.getItem('isAuth'))
-    console.log('Dashboard useContext auth state:',localStorage.getItem('isAuth'))
+    console.log('Dashboard userinfo', localStorage.getItem('userData'))
+    const userString = localStorage.getItem('userData')
+    const userJson = JSON.parse(userString)
+    console.log('Dashboard userinfo parsed', userJson)
 
     const logout = async () => {
         try {
@@ -45,6 +49,7 @@ const Dashboard = () => {
         <div>
             <h1>Dashboard</h1>
             <h2>{protectedData}</h2>
+            <h4>Welcome {}</h4>
 
             <button onClick={() => logout()} className='logout-button'>Log Out</button>
         </div>
